@@ -1,0 +1,12 @@
+<h1>Musican List</h1>
+{% if artists %}
+    <ul>
+        {% for artist in artists %}
+            <li>
+                <a href="/{{ artist.id }}">{{ artist.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No artists.</p>
+{% endif %}

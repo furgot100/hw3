@@ -1,0 +1,17 @@
+<h1>{{ album.name }}</h1>
+Artist : {{ album.artist }}<br>
+Genre : {{ album.genre }}<br>
+Release date : {{ album.publish_date}}<br>
+
+<h2>Song List</h2>
+{% if songs %}
+    <ul>
+        {% for song in songs %}
+            <li>
+                <a href="{% url 'music:song_detail' song.id %}">{{ song.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Songs</p>
+{% endif %}

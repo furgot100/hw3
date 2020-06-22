@@ -1,0 +1,19 @@
+<h1>{{ artist.name }}</h1>
+
+<br>
+<h2>Album List</h2>
+{% if albums %}
+    <ul>
+        {% for album in albums %}
+            <li>
+                <a href="{% url 'music:album_detail' album.id %}">{{ album.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No albums.</p>
+{% endif %}
+
+<!-- "album/{{ album.id }}" -->
+
+
